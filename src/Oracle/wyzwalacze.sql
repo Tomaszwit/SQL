@@ -1,0 +1,15 @@
+CREATE OR REPLACE TRIGGER NoNeg
+BEFORE INSERT
+ON PapierWartosciowy
+for each row
+BEGIN
+IF :new.AktualnaWartosc <= 0 or :new.IloscWydanychWalorow<=0 THEN
+ dbms_output.put_line('Wartosc ujemna');
+ END IF;
+END;
+
+CREATE OR REPLACE TRIGGER NODELWLASCICIEL
+BEFORE DELETE ON WLASCICIEL
+BEGIN
+  RAISE_APPLICATION_ERROR(-20100,'USUWANIE OSOB ZABLOKOWANE');
+END;

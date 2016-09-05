@@ -1,0 +1,1 @@
+Baza przechowuje symulacje tranzakcji odbywajacych sie na warszawskiej gieldzie papierow wartosciowych.
